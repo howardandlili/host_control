@@ -1,1 +1,18 @@
-这是一个简单的
+这是一个简单的管理主机集群的项目
+
+需求:
+
+主机分组
+主机信息配置文件用configparser解析
+可批量执行命令、发送文件，结果实时返回，执行格式如下
+batch_run  -h h1,h2,h3   -g web_clusters,db_servers    -cmd  "df -h"　
+batch_scp   -h h1,h2,h3   -g web_clusters,db_servers  -action put  -local test.py  -remote /tmp/　
+主机用户名密码、端口可以不同
+执行远程命令使用paramiko模块
+批量命令需使用multiprocessing并发
+
+目录：
+bin 入口
+conf 配置文件
+core 主要代码
+db 数据库文件
